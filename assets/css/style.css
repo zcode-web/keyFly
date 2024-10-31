@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #87CEEB, #fff); /* Day sky background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+#startButton{
+    padding: 2px 4px;
+    font-weight: bolder;
+    background-color: #1cbf96;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid #ffe5e5;
+    font-size: 18px;
+    box-shadow: 3px 4px 10px rgba(0, 0, 1, 0.5);
+    border-radius: 5px;
+}
+.timer_p,#score_p{
+    padding: 2px 4px;
+    font-weight: bolder;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: crosshair;
+    font-family: 'Courier New', Courier, monospace;
+}
+.timer_p span{
+    color: red;
+}
+
+.game-container {
+    text-align: center;
+}
+
+#sky {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    animation: float 10s linear infinite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input {
+    width: 80%;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 8px 0px;
+    transition: all 0.3s ease;
+}
+input.error{
+    background-color: #ff4d4d;
+    border-color: #ffe5e5;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+/* Feedback Animation */
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* Styling for Correct Typing Feedback */
+.feedback {
+    position: absolute;
+    font-size: 20px;
+    color: green;
+    animation: pop 0.5s ease forwards;
+}
+/* Flying birds styling */
+.birds-container {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.bird {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/eagle.png'); 
+    background-size: cover;
+    animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-100px) translateY(0); }
+    50% { transform: translateX(100vw) translateY(-30px); }
+    100% { transform: translateX(100vw) translateY(0); }
+}
+
+/* Specific bird positions and timings */
+#bird1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+#bird2 {
+    top: 5%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+#bird3 {
+    top: 15%;
+    left: 80%;
+    animation-delay: 4s;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .cloud {
+        width: 50%;
+        height: auto;
+    }
+    .bird {
+        width: 20px;
+        height: 20px;
+    }
+    .floating-bed {
+        width: 80%;
+    }
+}
+
+.sound-section{
+    display: none;
+}

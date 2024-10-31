@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyFly - Typing Game for Kids</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body onload="playMusic();">
+    <div class="game-container">
+        <h1>KeyFly - Typing Game for Kids <span>&copy WeCraft  Tech</span></h1>
+        <button id="startButton">Start Game</button>
+        <p class="timer_p">Time Left: <span id="timer">120</span> seconds</p>
+        <p id="score_p">Score: <span id="score">0</span></p>
+        <p id="score_p">Win (1000 | 25 Pts): <span id="win">0</span></p>
+        <div id="sky"></div>
+    </div>
+    <!-- Adding Birds Container-->
+    <div class="birds-container">
+        <!-- Birds that interact with the feeder button -->
+        <div class="bird" id="bird1"></div>
+        <div class="bird" id="bird2"></div>
+        <div class="bird" id="bird3"></div>
+    </div>
+    <div class="sound-section">
+    <audio id="background-music" loop autoplay>
+        <source src="assets/sounds/rain.mp3" type="audio/mpeg"> <!-- Background Music -->
+    </audio>
+    <button id="mute-btn">🔊 Mute</button> <!-- Mute button -->
+   </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
